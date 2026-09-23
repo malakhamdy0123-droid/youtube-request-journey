@@ -1,0 +1,3 @@
+YouTube Request Journey - File 1
+Client / Browser sends a request for youtube.com.
+DNS finds the IP address for YouTube.

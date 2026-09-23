@@ -1,0 +1,3 @@
+YouTube Request Journey - File 2
+The request travels through the network.
+The YouTube server processes the request and sends a response.

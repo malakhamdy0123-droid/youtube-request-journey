@@ -1,0 +1,7 @@
+YouTube Request Journey - File 1
+Client / Browser sends a request for youtube.com.
+DNS finds the IP address for YouTube.
+
+YouTube Request Journey - File 2
+The request travels through the network.
+The YouTube server processes the request and sends a response.
