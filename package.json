@@ -1,0 +1,16 @@
+{
+  "name": "youtube-request-journey",
+  "version": "1.0.0",
+  "description": "Node.js demonstration of non-blocking file reading, Promise.all, EventEmitter, and file merging.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "nodejs",
+    "fs",
+    "promise-all",
+    "eventemitter"
+  ],
+  "license": "ISC"
+}

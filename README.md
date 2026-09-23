@@ -1,19 +1,66 @@
-# YouTube Request Journey
+# youtube-request-journey
 
-## What happens when I open YouTube?
+A simple Node.js project that demonstrates:
 
-When I type `youtube.com` in my browser and press Enter, my browser acts as the Client and sends a request.
+- Non-blocking asynchronous file reading with `fs.readFile`
+- Reading two files at the same time with `Promise.all`
+- Using Node.js built-in `EventEmitter`
+- Merging the two file contents after both reads finish
+- Writing the merged content to `merged.txt` with `fs.writeFile`
 
-1. **Client / Browser:** I type `youtube.com` and press Enter.
-2. **DNS:** DNS finds the IP address for YouTube.
-3. **Router / ISP:** The request leaves my device and reaches the network.
-4. **Internet Routers (Hops):** The request travels through several network hops.
-5. **YouTube Server:** The server receives and processes the request.
-6. **Response:** The server sends data back to the browser.
-7. **Browser:** The browser receives the response and displays YouTube.
+## Requirements
 
-### Request Journey
+- Node.js installed on Windows
+- VS Code
 
-**Client / Browser → DNS → Router / ISP → Internet Routers (Hops) → YouTube Server → Response → Browser**
+## Project files
 
-This is a simplified view of the request journey. The exact number and type of network hops can vary.
+```text
+youtube-request-journey/
+├── app.js
+├── file1.txt
+├── file2.txt
+├── package.json
+└── README.md
+```
+
+`merged.txt` is created automatically when the program runs successfully.
+
+## How to run on Windows with VS Code
+
+1. Open VS Code.
+2. Select **File > Open Folder...**
+3. Choose the `youtube-request-journey` folder.
+4. Open the VS Code terminal using **Terminal > New Terminal**.
+5. Check that Node.js is installed:
+
+```bash
+node --version
+```
+
+6. Run the project:
+
+```bash
+npm start
+```
+
+You can also run:
+
+```bash
+node app.js
+```
+
+## Expected result
+
+The terminal should show:
+
+```text
+Both files were read successfully.
+Merged content was written to merged.txt
+```
+
+A new file named `merged.txt` will appear in the project folder. It contains the contents of `file1.txt` followed by the contents of `file2.txt`.
+
+## Important
+
+The program uses `fs.readFile` with a callback wrapped in a Promise, so the file reads are asynchronous and non-blocking. `Promise.all` waits until both reads have completed before emitting the `mergeFiles` event. The event listener then merges the contents and uses `fs.writeFile` asynchronously to create `merged.txt`.
